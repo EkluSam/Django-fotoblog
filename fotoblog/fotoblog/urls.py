@@ -4,9 +4,12 @@ from django.contrib.auth.views import (
 from django.urls import path
 
 import blog.views
+import authentication.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # Authentification 
     path('', LoginView.as_view(
         template_name='authentication/login.html',
         redirect_authenticated_user=True),
@@ -20,5 +23,8 @@ urlpatterns = [
         template_name='authentication/password_change_done.html'),
          name='password_change_done'
          ),
+    path('signup/', authentication.views.signup_page, name='signup'),
+
+    # Blog
     path('home/', blog.views.home, name='home'),
 ]
