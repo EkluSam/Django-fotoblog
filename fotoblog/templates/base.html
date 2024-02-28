@@ -4,10 +4,10 @@
     </head>
     <body>
         <h1>FotoBlog</h1>
-        {%block content %}
-        {% if user.is_authentificated %}
-            <p>Vous êtes connecté en tant que {{ request.user }}. <a href="{% url 'logout' %}">Se déconnecter</a></p>
+        {%block content %}{% endblock content %}
+        {% if user.is_authenticated %}
+        <p>Vous êtes connecté en tant que {{ request.user }}. <a href="{% url 'logout' %}">Se déconnecter</a></p>
         {% endif %}
-        {% endblock content %}
+
     </body>
 </html>

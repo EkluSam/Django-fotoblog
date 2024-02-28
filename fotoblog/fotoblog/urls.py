@@ -22,7 +22,10 @@ import blog.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # APP - Authentification ----------------------------------------
     path('', authentification.views.login_page, name='login'),
     path('logout/', authentification.views.logout_user, name='logout'),
-    
+
+    # APP - Blog ----------------------------------------------------
+    path('home/', blog.views.home, name='home')
 ]
