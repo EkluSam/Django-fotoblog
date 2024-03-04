@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-
+from django.conf import settings
 
 class User(AbstractUser):
     CREATOR = 'CREATOR'
@@ -10,5 +10,9 @@ class User(AbstractUser):
         (CREATOR, 'Créateur'),
         (SUBSCRIBER, 'Abonné'),
     )
-    profile_photo = models.ImageField(verbose_name='photo de profil')
+    profile_photo = models.ImageField(verbose_name='photo de profil', upload_to='profile_pics', default='unknown.jpg')
     role = models.CharField(max_length=30, choices=ROLE_CHOICES, verbose_name='rôle')
+
+
+
+
