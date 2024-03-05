@@ -10,7 +10,7 @@
             {% if user.is_authenticated %}
                 <p>Salut, {{ user }} !</p>
                 {% if user.profile_photo %}
-                    <img class="avatar" src={{ user.profile_photo.url }}>
+                    <img class="avatar" src="{{ user.profile_photo.url }}">
                 {% else %}
                     <img class="avatar" src="{% static 'images/default_profile.png'%}">
                 {% endif %}
