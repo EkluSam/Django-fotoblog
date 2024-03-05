@@ -30,9 +30,9 @@ class Blog(models.Model):
     word_count = models.IntegerField(null=True)
 
     def _get_word_count(self):
-        for char in self.content:
-            self.word_count+=1
+        return len(self.content.split(' '))
 
     def save(self, *args, **kwargs):
+        self.word_count = self._get_word_count()
         super().save(*args, **kwargs)
-        self._get_word_count()
+        
