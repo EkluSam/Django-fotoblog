@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Publier votre photo de profil</h2>
+    <h2>Téléverser une photo de profil</h2>
     <form method="post" enctype="multipart/form-data">
         {{ form.as_p }}
         {% csrf_token %}
