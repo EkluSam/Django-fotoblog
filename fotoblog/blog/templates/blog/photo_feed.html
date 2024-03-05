@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load blog_extras %}
+{% block content %}
+    <h2>Gallerie de photo</h2>
+    <div class="grid-container">
+        {% for instance in photos %}
+            {% if instance|model_type == 'Photo' %}
+                {% include 'blog/partials/photo_snippet.html' with blog=instance %}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock content %}
